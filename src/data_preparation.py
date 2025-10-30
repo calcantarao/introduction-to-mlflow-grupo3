@@ -1,7 +1,9 @@
+# inicia funcion preparar data
 def prepare_data(df):
     from sklearn.model_selection import train_test_split
     import pandas as pd
 
+    # Elimna columnas no importantes
     df = df.drop(columns="SK_ID_CURR")
     # Imputar todos los valores nulos en variables numéricas por la mediana de cada variable
     df = df.fillna(df.median(numeric_only=True))
@@ -14,5 +16,6 @@ def prepare_data(df):
     X = df_dummies.drop(columns=["TARGET"])
     y = df_dummies["TARGET"]
     
+    # Separación de datos train y test 80, 20
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20)
     return X_train, X_test, y_train, y_test
