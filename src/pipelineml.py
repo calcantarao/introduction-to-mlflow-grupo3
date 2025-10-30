@@ -6,8 +6,8 @@ from model_trainer import train_model
 from model_registry import register_model
 
 def main():
-    # Load data
-    data = load_data("D:/Proyectos/mlflow/repositorios/introduction-to-mlflow/data/in/application_data.csv")
+    # Load data - cambie la ruta de la data
+    data = load_data("C:/Users/LEGION Y540/UTEC/laboratorio_01/introduction-to-mlflow-grupo3/data/in/application_data.csv")
     
     # Prepare data
     X_train, X_test, y_train, y_test = prepare_data(data)
